@@ -25,7 +25,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       });
   
       if (!strengthData) {
-        res.status(404).json({ message: 'No strength found with this id!' });
+        res.status(404).json({ message: 'No strength data found with this id!' });
         return;
       }
   
