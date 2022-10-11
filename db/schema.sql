@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS lyfbro_db;
+CREATE DATABASE lyfbro_db;
