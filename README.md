@@ -50,17 +50,11 @@ Now, I totally Lyf, Bro!!
 ## Dependencies
 
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
-
 - [Sequelize](https://www.npmjs.com/package/sequelize)
-
 - [Express](https://www.npmjs.com/package/express)
-
 - [Tailwind](https://tailwindcss.com/docs/installation)
-
 - [Handlebars](https://handlebarsjs.com)
-
 - [D3 Calendar](https://observablehq.com/@d3/calendar)
-
 - [MySql2](https://www.mysql.com)
 
 ## Installation
@@ -87,16 +81,11 @@ Submit suggested improvements as a new GitHub branch to [Lyfbro](https://github.
 
 ## Team Members
 
-<a href="mailTo: nhufler@gmail.com?subject=Hello!" alt="" >Nick Hufler</a>
-
-<a href="mailTo: gareth.t.flynn@gmail.com?subject=Hello!" alt="" >Gareth Flynn</a>
-
-<a href="mailTo: michaelhobbs361219@gmail.com?subject=Hello!" alt="" >Michael Hobbs</a>
-
-<a href="mailTo: christian.bruno1995@gmail.com?subject=Hello!" alt="" >Christian Bruno</a>
-
-<a href="mailTo: bp4924@gmail.com?subject=Hello!" alt="" >Bernie Petters</a>
-
+<a href="mailTo: nhufler@gmail.com?subject=Hello!" alt="" >Nick Hufler</a>\
+<a href="mailTo: gareth.t.flynn@gmail.com?subject=Hello!" alt="" >Gareth Flynn</a>\
+<a href="mailTo: michaelhobbs361219@gmail.com?subject=Hello!" alt="" >Michael Hobbs</a>\
+<a href="mailTo: christian.bruno1995@gmail.com?subject=Hello!" alt="" >Christian Bruno</a>\
+<a href="mailTo: bp4924@gmail.com?subject=Hello!" alt="" >Bernie Petters</a>\
 <a href="mailTo: nvmnghi@gmail.com?subject=Hello!" alt="">Annie Nguyen</a>
 
 ## Mockups
