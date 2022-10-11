@@ -36,13 +36,13 @@ Then I sign up using my email as my username and password.
 After I log in, I land on an empty dashboard.\
 Then I am prompted to log my first activity.
 
-When I choose a given category (cardio, mindfulness or strength),
+When I choose a given category (cardio, mindfulness or strength),\
 Then I put a brief description and the the duration of my activity.
 
-When I log the duration of the activity,
+When I log the duration of the activity,\
 Then I am prompted to input my mood, ranging from "Not Well" to "Great".
 
-When I choose my mood and complete the form,
+When I choose my mood and complete the form,\
 Then I am directed back to my dashbood and see my activity logged on a calendar graph.
 
 Now, I totally Lyf, Bro!!
