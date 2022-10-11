@@ -6,8 +6,7 @@
 
 ## Description
 
-       Lyfbro is a web application aims at helping a user track activities
-       to monitor health progress.
+       Lyfbro is a web application aimed at helping a user track activities to monitor health progress.
 
        The app provides a "gamified" way to inspire a healthy lifestyle.
 
@@ -31,10 +30,10 @@
 
 As a user, I want to log my activities so that I can track my progress.
 
-When I go to [url] and see a sign up/ login modal.
+When I go to [url] and see a sign up/ login modal,\
 Then I sign up using my email as my username and password.
 
-After I log in, I land on an empty dashboard.
+After I log in, I land on an empty dashboard.\
 Then I am prompted to log my first activity.
 
 When I choose a given category (cardio, mindfulness or strength),
