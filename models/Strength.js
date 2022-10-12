@@ -23,6 +23,7 @@ Strength.init(
     },
     category_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
             model: 'category',
             key: 'id',
@@ -30,6 +31,7 @@ Strength.init(
     },
     feeling_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'feeling',
         key: 'id',
@@ -37,6 +39,7 @@ Strength.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
