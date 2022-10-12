@@ -2,7 +2,29 @@ const router = require('express').Router();
 const { Strength } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+    const strengthData = await Strength.findAll();
+    res.status(200).json(strengthData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const strengthData = await Strength.findByPk(req.params.id);
+    if (!strengthData) {
+      res.status(404).json({ message: 'No Strength Data found with this ID!'});
+      return;
+    }
+    res.status(200).json(strengthData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/', async (req, res) => {
     try {
       const newStrength = await Strength.create({
         ...req.body,
@@ -15,7 +37,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
       const strengthData = await Strength.destroy({
         where: {
