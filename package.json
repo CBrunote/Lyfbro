@@ -27,7 +27,8 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.2.5",
     "path": "^0.12.7",
-    "sequelize": "^6.25.0"
+    "sequelize": "^6.25.0",
+    "cal-heatmap": "^3.6.2"
   },
   "bugs": {
     "url": "https://github.com/garethtflynn/Lyfbro/issues"
