@@ -2,7 +2,30 @@ const router = require('express').Router();
 const { Cardio } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+
+router.get('/', async (req, res) => {
+  try {
+    const cardioData = await Cardio.findAll();
+    res.status(200).json(cardioData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const cardioData = await Cardio.findByPk(req.params.id);
+    if (!cardioData) {
+      res.status(404).json({ message: 'No Cardio Data found with this ID!'});
+      return;
+    }
+    res.status(200).json(cardioData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/', async (req, res) => {
     try {
       const newCardio = await Cardio.create({
         ...req.body,
@@ -11,11 +34,13 @@ router.post('/', withAuth, async (req, res) => {
   
       res.status(200).json(newCardio);
     } catch (err) {
+    
       res.status(400).json(err);
+      console.log(err)
     }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
       const cardioData = await Cardio.destroy({
         where: {

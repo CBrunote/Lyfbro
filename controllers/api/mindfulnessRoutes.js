@@ -2,7 +2,29 @@ const router = require('express').Router();
 const { Mindfulness } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+    const mindfulnessData = await Mindfulness.findAll();
+    res.status(200).json(mindfulnessData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const mindfulnessData = await Mindfulness.findByPk(req.params.id);
+    if (!mindfulnessData) {
+      res.status(404).json({ message: 'No Mindfulness Data found with this ID!'});
+      return;
+    }
+    res.status(200).json(mindfulnessData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/', async (req, res) => {
     try {
       const newMindfulness = await Mindfulness.create({
         ...req.body,
@@ -15,7 +37,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
       const mindfulnessData = await Mindfulness.destroy({
         where: {
