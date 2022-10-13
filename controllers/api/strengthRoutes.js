@@ -24,6 +24,23 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.put('/:id', async (req, res) => {
+  try {
+    const strengthData = await Strength.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+    if (!strengthData[0]) {
+      res.status(404).json({ message: 'No Strength data found with this id!'});
+      return;
+    }
+    res.status(200).json(strengthData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
     try {
       const newStrength = await Strength.create({
