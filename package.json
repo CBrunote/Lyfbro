@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js",
+    "schema": "mysql -u root -p < db/schema.sql",
+    "restore": "npm run schema && npm run seed"
   },
   "repository": {
     "type": "git",
