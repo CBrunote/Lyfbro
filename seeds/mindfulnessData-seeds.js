@@ -2,294 +2,294 @@ const { Mindfulness } = require('../models');
 
 const mindfulnessData = [
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 1
     },
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 2 
     },
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 3
     },
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 4
     },
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 5
     },
     {
-      date: "2022-10-13",
+      date: 1665619200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 6
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 6
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 5 
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 4
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 3
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 2
     },
     {
-      date: "2022-10-14",
+      date: 1665705600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 1
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 2
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 1 
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 6
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 4
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 5
     },
     {
-      date: "2022-10-15",
+      date: 1665792000,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 3
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 3
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 2 
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 1
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 6
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 5
     },
     {
-      date: "2022-10-16",
+      date: 1665878400,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 4
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 3
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 2 
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 1
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 6
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 5
     },
     {
-      date: "2022-10-17",
+      date: 1665964800,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 4
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 6
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 5 
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 4
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 3
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 2
     },
     {
-      date: "2022-10-18",
+      date: 1666051200,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
       user_id: 1
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 30,
       category_id: 1,
       feeling_id: 1,
       user_id: 1
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 2,
       user_id: 2 
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 15,
       category_id: 1,
       feeling_id: 3,
       user_id: 3
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 25,
       category_id: 1,
       feeling_id: 4,
       user_id: 4
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 5,
       user_id: 5
     },
     {
-      date: "2022-10-19",
+      date: 1666137600,
       time_spent: 20,
       category_id: 1,
       feeling_id: 3,
