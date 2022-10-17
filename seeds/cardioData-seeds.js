@@ -299,4 +299,4 @@ const cardioData = [
 
 const seedCardio = () => Cardio.bulkCreate(cardioData);
 
-module.exports = { seedCardio };
+module.exports = seedCardio;
