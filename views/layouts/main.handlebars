@@ -1,57 +1,70 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible">
-    <link rel=”stylesheet” href="/public/css/cal-heatmap.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" />
+    <link rel="”stylesheet”" href="/public/css/cal-heatmap.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css"
+    />
     <style>
-        body {
-            font-family: 'Poppins';
-            }
+      body { font-family: 'Poppins'; }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Lyfbro</title>
-</head>
-<body class="dark:bg-slate-900">
+  </head>
+  <body class="dark:bg-slate-900">
     <header class="bg-gray-800">
-        <nav>
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div class="relative flex h-16 items-center justify-between">
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex flex-shrink-0 items-center">
-                            <h1 class="text-3xl dark:text-green-500 font-black tracking-wide">Lyfbro</h1>
-                        </div>
-                    </div>
-                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <!-- login or logout -->
-                        {{#if logged_in}}
-                        <a href="/profile">profile</a> |
-                        <button class="no-button" id="logout">logout</button>
-                        {{else}}
-                        <a href="/login">login</a>
-                        {{/if}}
-                    </div>
-                </div>
+      <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <div class="flex flex-shrink-0 items-center">
+                <h1
+                  class="text-3xl dark:text-green-500 font-black tracking-wide"
+                >Lyfbro</h1>
+              </div>
             </div>
-        </nav>
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+              <!-- login or logout -->
+              {{#if logged_in}}
+                <a href="/profile">profile</a>
+                |
+                <button class="no-button" id="logout">logout</button>
+              {{else}}
+                <a href="/login">login</a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- Body -->
     <main class="dark:bg-slate-900 dark:text-green-100 m-16">
-        {{{body}}}
+      {{{body}}}
     </main>
 
     <footer></footer>
 
     <!-- for logged in users -->
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
-</body>
+  </body>
 </html>

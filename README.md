@@ -28,9 +28,9 @@
 
 ## User Story
 
-As a user, I want to log my activities so that I can track my progress.
+As a user, I want to log my health-related activities so that I can track my progress.
 
-When I go to [url] and see a sign up/ login modal,\
+When I go to [url] and see a sign up modal,\
 Then I sign up using my email as my username and password.
 
 After I log in, I land on an empty dashboard.\
@@ -43,7 +43,7 @@ When I log the duration of the activity,\
 Then I am prompted to input my mood, ranging from "Not Well" to "Great".
 
 When I choose my mood and complete the form,\
-Then I am directed back to my dashbood and see my activity logged on a calendar graph.
+Then I am directed back to my dashboard and see my activity logged on a calendar graph.
 
 Now, I totally Lyf, Bro!!
 
