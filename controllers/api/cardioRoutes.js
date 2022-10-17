@@ -38,6 +38,7 @@ router.get('/:user_id', async (req, res) => {
   }
 });
 
+
 router.put('/:id', async (req, res) => {
   try {
     const cardioData = await Cardio.update(req.body, {

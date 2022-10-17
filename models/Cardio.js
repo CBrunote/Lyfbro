@@ -13,9 +13,8 @@ Cardio.init(
         autoIncrement: true,
     },
     date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: DataTypes.NOW,
     },
     time_spent: {
         type: DataTypes.INTEGER,
