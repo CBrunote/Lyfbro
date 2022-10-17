@@ -30,8 +30,6 @@ const seedAll = async () => {
   await seedMindfulness();
   console.log('\n----- MINDFULNESS DATA SEEDED -----\n');
 
-
-
   process.exit(0);
 };
 
