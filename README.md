@@ -37,7 +37,7 @@ After I log in, I land on an empty dashboard.\
 Then I am prompted to log my first activity.
 
 When I choose a given category (cardio, mindfulness or strength),\
-Then I put a brief description and the the duration of my activity.
+Then I put a brief description and the duration of my activity.
 
 When I log the duration of the activity,\
 Then I am prompted to input my mood, ranging from "Not Well" to "Great".
