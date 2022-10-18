@@ -4,7 +4,6 @@ const Cardio = require('./Cardio');
 const Feeling = require('./Feeling');
 const Mindfulness = require('./Mindfulness');
 const Strength = require('./Strength');
-const { cardioData } = require('../seeds/cardioData-seeds');
 
 //Category
 Cardio.belongsTo(Category, {
