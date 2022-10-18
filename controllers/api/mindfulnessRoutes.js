@@ -15,19 +15,6 @@ router.get('/:user_id', async (req, res) => {
   try {
     const mindfulnessData = await Mindfulness.findAll({where: {user_id: req.params.user_id}});
     if (!mindfulnessData) {
-      res.status(404).json({ message: 'No Mindfulness Data found with this User!'});
-      return;
-    }
-    res.status(200).json(mindfulnessData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/:id', async (req, res) => {
-  try {
-    const mindfulnessData = await Mindfulness.findByPk(req.params.id);
-    if (!mindfulnessData) {
       res.status(404).json({ message: 'No Mindfulness Data found with this ID!'});
       return;
     }
@@ -37,11 +24,25 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.get('/:user_id/:id', async (req, res) => {
+  try {
+    const mindfulnessData = await Mindfulness.findAll({where: {user_id: req.params.user_id, id:req.params.id}});
+    if (!mindfulnessData) {
+      res.status(404).json({ message: 'No Mindfulness Data found with this User ID!'});
+      return;
+    }
+    res.status(200).json(mindfulnessData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id/:user_id', async (req, res) => {
   try {
     const mindfulnessData = await Mindfulness.update(req.body, {
       where: {
-        id: req.params.id
+        id: req.params.id,
+        user_id: req.params.user_id
       }
     });
     if (!mindfulnessData[0]) {

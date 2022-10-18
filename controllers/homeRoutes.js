@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Strength, User, Mindfulness, Feeling, Cardio, Category } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
