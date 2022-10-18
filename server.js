@@ -29,9 +29,8 @@ const sess = {
 
 app.use(session(sess));
 app.set('view engine', 'handlebars');
-app.engine('handlebars', handlebars({
-  layoutsDir: __dirname + '/views/layouts'
-  }));
+app.engine('handlebars', hbs.engine);
+
 
 
 app.use(express.json());
