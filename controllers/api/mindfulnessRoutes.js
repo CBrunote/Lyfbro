@@ -11,6 +11,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:user_id', async (req, res) => {
+  try {
+    const mindfulnessData = await Mindfulness.findAll({where: {user_id: req.params.user_id}});
+    if (!mindfulnessData) {
+      res.status(404).json({ message: 'No Mindfulness Data found with this User!'});
+      return;
+    }
+    res.status(200).json(mindfulnessData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/:id', async (req, res) => {
   try {
     const mindfulnessData = await Mindfulness.findByPk(req.params.id);

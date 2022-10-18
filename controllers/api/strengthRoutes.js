@@ -11,6 +11,19 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:user_id', async (req, res) => {
+  try {
+    const strengthData = await Strength.findAll({where: {user_id: req.params.user_id}});
+    if (!strengthData) {
+      res.status(404).json({ message: 'No Strength Data found with this User!'});
+      return;
+    }
+    res.status(200).json(strengthData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/:id', async (req, res) => {
   try {
     const strengthData = await Strength.findByPk(req.params.id);

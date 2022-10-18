@@ -12,11 +12,15 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:user_id/', async (req, res) => {
   try {
-    const cardioData = await Cardio.findByPk(req.params.id);
+    const cardioData = await Cardio.findAll({
+      where: {
+          user_id: req.params.user_id
+        }
+    });
     if (!cardioData) {
-      res.status(404).json({ message: 'No Cardio Data found with this ID!'});
+      res.status(404).json({ message: 'No Cardio Data found with this User!'});
       return;
     }
     res.status(200).json(cardioData);
