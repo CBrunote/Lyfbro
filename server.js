@@ -28,12 +28,9 @@ const sess = {
 };
 
 app.use(session(sess));
-app.set('view engine', 'hbs');
-app.engine('hbs', handlebars({
-  layoutsDir: __dirname + '/views/layouts',
-  //new configuration parameter
-  extname: 'hbs',
-  defaultLayout: 'main'
+app.set('view engine', 'handlebars');
+app.engine('handlebars', handlebars({
+  layoutsDir: __dirname + '/views/layouts'
   }));
 
 
