@@ -19,7 +19,7 @@ const newActivity = async (event) => {
       if (categoryId == 1) {
         return 'mindfulness'
       } 
-      if (categoryId == 2) {c
+      if (categoryId == 2) {
         return 'strength'
       }
       if (categoryId == 3) {
@@ -34,13 +34,13 @@ const newActivity = async (event) => {
       console.log('it worked')
       const response = await fetch(`/api/${categoryName}`, {
         method: 'POST',
-        body: {
+        body: JSON.stringify({
           "date": timeStamp,
           "time_spent": time_spentInt,
           "category_id": categoryIdInt,
           "feeling_id": feeling_nameInt,
           "user_id": userId,
-      },
+      }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -48,7 +48,7 @@ const newActivity = async (event) => {
       });
       console.log(response)
       if (response.ok) {
-        // document.location.replace('/activity');
+        document.location.replace('/');
         alert('You Successfully logged your activity!');
       } else {
         alert('Failed to log activity');
