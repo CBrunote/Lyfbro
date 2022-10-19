@@ -1,29 +1,36 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Activity Log</h2>
-    <!-- Important classes: activity-form, -->
-    <form class="form activity-form">
-            <div class="relative inline-block text-left">
-                <div>
-                    <button type="button" class="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                    Activity
-                    <!-- Heroicon name: mini/chevron-down -->
-                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                    </svg>
-                    </button>
-                </div>
-            <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                <div class="py-1" role="none">
-                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Cardio</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Mindfulness</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Strength</a>
-                <form method="POST" action="#" role="none">
-                    <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-                </form>
-                </div>
-            </div>
-        </div>
-    </form>
+<label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Activity</label>
+<select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 category">
+  <option selected>Choose Activity</option>
+  <option value="1" data="mindfulness">Mindfulness</option>
+  <option value="2" data="strength">Strength</option>
+  <option value="3" data="cardio">Cardio</option>
+</select>
+
+<label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mood</label>
+<select id="feeling-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 feeling-name">
+  <option selected>Choose Mood</option>
+  <option value="1">Worst</option>
+  <option value="2">Bad</option>
+  <option value="3">Neutral</option>
+  <option value="4">Good</option>
+  <option value="5">Best</option>
+</select>
+
+<label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Date</label>
+<div class="relative">
+  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
   </div>
+  <input datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 date" placeholder="Select date" id="date">
+</div>
+
+
+<div class="mb-6">
+    <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Time Spent (in minutes)</label>
+    <input type="text" id="large-input" class="block p-4 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 time-spent" value="0">
+</div>
+
+
+<button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 log-activity" id="#log-activity">Submit</button>
+
+<script type="text/javascript" src="/js/activity.js"></script>
