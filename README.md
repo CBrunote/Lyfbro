@@ -30,7 +30,7 @@
 
 As a user, I want to log my health-related activities so that I can track my progress.
 
-When I go to [url] and see a sign up modal,\
+When I go to [url] and see a sign up page,\
 Then I sign up using my email as my username and password.
 
 After I log in, I land on an empty dashboard.\
@@ -63,7 +63,13 @@ Now, I totally Lyf, Bro!!
 
 ## Usage
 
-Just do it.
+Sign up/sign in\
+enter activity (Cardio, Strength, or Mindfulness)\
+Select the radio button reflecting your mood\
+Select the date from the calendar\
+Enter the time in minutes\
+
+View the heatmaps showing your activity
 
 ## License
 
