@@ -59,9 +59,10 @@ router.put('/:id/:user_id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    const body = req.body
     try {
       const newCardio = await Cardio.create({
-        ...req.body,
+        ...body,
         // user_id: 1,
       });
   
