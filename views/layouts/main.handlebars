@@ -3,7 +3,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" />
-    <link rel="”stylesheet”" href="/public/css/cal-heatmap.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
@@ -19,10 +18,14 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css"
     />
+    <link rel="”stylesheet”" href="/public/css/cal-heatmap.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <style>
       body { font-family: 'Poppins'; }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/datepicker.js"></script>
     <title>Lyfbro</title>
   </head>
   <body class="dark:bg-slate-900">
@@ -36,16 +39,12 @@
               <div class="flex flex-shrink-0 items-center">
                 <h1
                   class="text-3xl dark:text-green-500 font-black tracking-wide"
-                >Lyfbro</h1>
+                > <a href="/">Lyfbro</a></h1>
               </div>
             </div>
-            <div
-              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-            >
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <!-- login or logout -->
               {{#if logged_in}}
-                <a href="/profile">profile</a>
-                |
                 <button class="no-button" id="logout">logout</button>
               {{else}}
                 <a href="/login">login</a>

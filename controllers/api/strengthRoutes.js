@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:user_id', async (req, res) => {
   try {
-    const strengthData = await Strength.findByPk(req.params.id);
+    const strengthData = await Strength.findAll({where: {user_id: req.params.user_id}});
     if (!strengthData) {
       res.status(404).json({ message: 'No Strength Data found with this ID!'});
       return;
@@ -24,11 +24,25 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.get('/:user_id/:id', async (req, res) => {
+  try {
+    const strengthData = await Strength.findAll({where: {user_id: req.params.user_id, id:req.params.id}});
+    if (!strengthData) {
+      res.status(404).json({ message: 'No strength Data found with this User ID!'});
+      return;
+    }
+    res.status(200).json(strengthData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id/:user_id', async (req, res) => {
   try {
     const strengthData = await Strength.update(req.body, {
       where: {
-        id: req.params.id
+        id: req.params.id,
+        user_id: req.params.user_id
       }
     });
     if (!strengthData[0]) {
@@ -42,10 +56,11 @@ router.put('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const body = req.body
     try {
       const newStrength = await Strength.create({
-        ...req.body,
-        user_id: req.session.user_id,
+        ...body,
+        // user_id: req.session.user_id,
       });
   
       res.status(200).json(newStrength);

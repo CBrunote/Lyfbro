@@ -32,7 +32,7 @@
 
 .cal-heatmap-container .subdomain-text {
 	font-size: 8px;
-	fill: #999;
+	fill: rgb(99, 99, 99);
 	pointer-events: none
 }
 
@@ -116,7 +116,7 @@ Remove comment to apply this style to date with value equal to 0
 	padding: 10px;
 	background: #222;
 	color: #bbb;
-	font-size: 12px;
+	font-size: 15px;
 	line-height: 1.4;
 	width: 140px;
 	position: absolute;
