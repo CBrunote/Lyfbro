@@ -56,10 +56,11 @@ router.put('/:id/:user_id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const body = req.body
     try {
       const newMindfulness = await Mindfulness.create({
-        ...req.body,
-        user_id: req.session.user_id,
+        ...body,
+        // user_id: req.session.user_id,
       });
   
       res.status(200).json(newMindfulness);
