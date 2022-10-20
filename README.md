@@ -30,7 +30,7 @@
 
 As a user, I want to log my health-related activities so that I can track my progress.
 
-When I go to [url] and see a sign up page,\
+When I go to [LyfBro](https://lyfbro99.herokuapp.com/login) and see a sign up page,\
 Then I sign up using my email as my username and choose my password.
 
 When I am a registered user,\
@@ -63,7 +63,9 @@ Now, I totally Lyf, Bro!!
 
 ## Usage
 
-Sign up/sign in\
+Click this [link](https://lyfbro99.herokuapp.com/login) to load the app.
+
+Sign up/sign in.\
 Click the "New Activity" button.\
 Enter your activity (Cardio, Strength, or Mindfulness)\
 Select the radio button reflecting your mood\
