@@ -52,7 +52,7 @@ router.get('/:user_id', async (req, res) => {
 });
 
 
-router.put('/:id/:user_id', async (req, res) => {
+router.put('/:id/:user_id', withAuth, async (req, res) => {
   try {
     const cardioData = await Cardio.update(req.body, {
       where: {
@@ -71,12 +71,12 @@ router.put('/:id/:user_id', async (req, res) => {
 });
 
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body
     try {
       const newCardio = await Cardio.create({
         ...body,
-        // user_id: 1,
+        user_id: req.session.user_id,
       });
   
       res.status(200).json(newCardio);
@@ -87,7 +87,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:user_id', async (req, res) => {
+router.delete('/:user_id', withAuth, async (req, res) => {
     try {
       const cardioData = await Cardio.destroy({
         where: {

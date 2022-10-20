@@ -8,13 +8,16 @@ const login = async (event) => {
         // see if this is the right route to send to the API endpoint
         const response = await fetch('/api/users/login', {
             method: 'POST',
-            body: JSON.stringify({username, password}),
+            body: JSON.stringify({email, password}),
             headers: {"Content-Type": 'application/json'},
         });
+        console.log(response)
 
         // if login is successful redirect them to the home page? can change if need to.
         if (response.ok) {
-            document.location.replace('/homepage')
+            const jsonData = await response.json()
+            localStorage.setItem("User", JSON.stringify(jsonData.user))
+            document.location.replace('/')
         } else { 
             alert(response.statusText);
         }
@@ -28,16 +31,18 @@ const signUp = async (event) => {
     const email = document.querySelector('#email-signup').value.trim()
     const password = document.querySelector('#password-signup').value.trim()
 
-    if(username && email && password) {
+    if(email && password) {
         // check if this is the right API end point to send to
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({username, email, password}),
+            body: JSON.stringify({email, password}),
             headers: {'Content-Type': 'application/json'},
         })
         // if signup is successful redirect them to the home page? can change if need to.
         if (response.ok) {
-            document.location.replace('/homepage');
+            const jsonData = await response.json()
+            localStorage.setItem("User", JSON.stringify(jsonData.user))
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }

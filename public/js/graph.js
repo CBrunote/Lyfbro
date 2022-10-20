@@ -1,4 +1,10 @@
 var cal = new CalHeatMap();
+var userData = JSON.parse(localStorage.getItem("User"))
+var userID = userData.id
+
+console.log(userData)
+console.log(userID)
+
 
 var parser = function(data) {
     var stats = {};
@@ -9,7 +15,7 @@ var parser = function(data) {
 };
 
 async function getCardio(){
-    var requestUrl = 'http://localhost:3001/api/cardio/1'
+    var requestUrl = `http://localhost:3001/api/cardio/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -17,7 +23,7 @@ async function getCardio(){
 };
 
 async function getStrength(){
-    var requestUrl = 'http://localhost:3001/api/strength/1'
+    var requestUrl = `http://localhost:3001/api/strength/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -25,7 +31,7 @@ async function getStrength(){
 };
 
 async function getMindfulness(){
-    var requestUrl = 'http://localhost:3001/api/mindfulness/1'
+    var requestUrl = `http://localhost:3001/api/mindfulness/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();

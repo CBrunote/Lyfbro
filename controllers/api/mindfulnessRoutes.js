@@ -37,7 +37,7 @@ router.get('/:user_id/:id', async (req, res) => {
   }
 });
 
-router.put('/:id/:user_id', async (req, res) => {
+router.put('/:id/:user_id', withAuth, async (req, res) => {
   try {
     const mindfulnessData = await Mindfulness.update(req.body, {
       where: {
@@ -55,12 +55,12 @@ router.put('/:id/:user_id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body
     try {
       const newMindfulness = await Mindfulness.create({
         ...body,
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       });
   
       res.status(200).json(newMindfulness);
@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
       const mindfulnessData = await Mindfulness.destroy({
         where: {
