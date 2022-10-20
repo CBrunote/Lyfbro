@@ -38,6 +38,19 @@ router.get('/:user_id/:id', async (req, res) => {
   }
 });
 
+router.get('/:user_id', async (req, res) => {
+  try {
+    const cardioData = await Cardio.findAll(req.params.user_id);
+    if (!cardioData) {
+      res.status(404).json({ message: 'No Cardio Data found with this User ID!'});
+      return;
+    }
+    res.status(200).json(cardioData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 router.put('/:id/:user_id', withAuth, async (req, res) => {
   try {

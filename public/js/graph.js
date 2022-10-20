@@ -69,8 +69,8 @@ async function createCardioGraph() {
         },
         legend: [1, 10, 20, 30],
         legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };
@@ -106,8 +106,8 @@ async function createStrengthGraph() {
         },
         legend: [1, 10, 20, 30],
         legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };
@@ -143,8 +143,8 @@ async function createMindfulnessGraph() {
         },
         legend: [1, 10, 20, 30],
         legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };
