@@ -30,19 +30,19 @@
 
 As a user, I want to log my health-related activities so that I can track my progress.
 
-When I go to [url] and see a sign up modal,\
-Then I sign up using my email as my username and password.
+When I go to [LyfBro](https://lyfbro99.herokuapp.com/login) and see a sign up page,\
+Then I sign up using my email as my username and choose my password.
 
-After I log in, I land on an empty dashboard.\
-Then I am prompted to log my first activity.
+When I am a registered user,\
+Then I log in with my username and password.
 
-When I choose a given category (cardio, mindfulness or strength),\
-Then I put a brief description and the duration of my activity.
+When I log in,\
+Then I land on my dashboard, which displays my previous activity.
 
-When I log the duration of the activity,\
-Then I am prompted to input my mood, ranging from "Not Well" to "Great".
+When I select log activity,\
+Then I am presented with a form for submitting details of a new activity.
 
-When I choose my mood and complete the form,\
+When I complete the form,\
 Then I am directed back to my dashboard and see my activity logged on a calendar graph.
 
 Now, I totally Lyf, Bro!!
@@ -63,7 +63,16 @@ Now, I totally Lyf, Bro!!
 
 ## Usage
 
-Just do it.
+Click this [link](https://lyfbro99.herokuapp.com/login) to load the app.
+
+Sign up/sign in.\
+Click the "New Activity" button.\
+Enter your activity (Cardio, Strength, or Mindfulness)\
+Select the radio button reflecting your mood\
+Select the date from the calendar\
+Enter the time in minutes.
+
+Click Submit to view the heatmaps showing your activity.
 
 ## License
 

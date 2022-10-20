@@ -1,7 +1,7 @@
 {
   "name": "lyfbro",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![License: MIT}](https://img.shields.io/static/v1?label=License&message=MIT&color=yellow)](https://choosealicense.com/licenses/mit/)",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/garethtflynn/Lyfbro.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
@@ -33,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/garethtflynn/Lyfbro/issues"
   },
-  "homepage": "https://github.com/garethtflynn/Lyfbro#readme"
+  "homepage": "https://github.com/garethtflynn/Lyfbro#readme",
+  "devDependencies": {}
 }
