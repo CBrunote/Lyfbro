@@ -1,4 +1,7 @@
-var cal = new CalHeatMap();
+var cardioMap = new CalHeatMap();
+var strengthMap = new CalHeatMap();
+var mindfulnessMap = new CalHeatMap();
+
 var userData = JSON.parse(localStorage.getItem("User"))
 var userID = userData.id
 
@@ -15,7 +18,7 @@ var parser = function(data) {
 };
 
 async function getCardio(){
-    var requestUrl = `http://localhost:3001/api/cardio/${userID}`
+    var requestUrl = `/api/cardio/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -23,7 +26,7 @@ async function getCardio(){
 };
 
 async function getStrength(){
-    var requestUrl = `http://localhost:3001/api/strength/${userID}`
+    var requestUrl = `/api/strength/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -31,7 +34,7 @@ async function getStrength(){
 };
 
 async function getMindfulness(){
-    var requestUrl = `http://localhost:3001/api/mindfulness/${userID}`
+    var requestUrl = `/api/mindfulness/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -39,7 +42,7 @@ async function getMindfulness(){
 };
 
 async function createCardioGraph() {
-    cal.init({
+    cardioMap.init({
         data: await getCardio(),
         afterLoadData: parser,
         itemSelector: "#cardio-heatmap",
@@ -48,19 +51,16 @@ async function createCardioGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 20,
+        cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
         subDomainTextFormat: "%d",
-        domainMargin: 20,
         animationDuration: 800,
-        domainDynamicDimension: false,
-        previousSelector: "#example-h-PreviousDomain-selector",
-        nextSelector: "#example-h-NextDomain-selector",
+        previousSelector: "#previousSelector-a-previous",
+        nextSelector: "#previousSelector-a-next",
         label: {
-            position: "center",
-            width: 110
+            position: "top",
         },
         legendColors: {
             min: "#6EE7B7",
@@ -68,15 +68,16 @@ async function createCardioGraph() {
             empty: "white"
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 10,
+        legendCellSize: 15,
         legendHorizontalPosition: "right",
-        tooltip: false,
+        tooltip: true,
         weekStartOnMonday: false,
+        itemNamespace: "cardio"
     })
 };
 
 async function createStrengthGraph() {
-    cal.init({
+    strengthMap.init({
         data: await getStrength(),
         afterLoadData: parser,
         itemSelector: "#strength-heatmap",
@@ -85,19 +86,16 @@ async function createStrengthGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 20,
+        cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
         subDomainTextFormat: "%d",
-        domainMargin: 20,
         animationDuration: 800,
-        domainDynamicDimension: false,
         previousSelector: "#example-h-PreviousDomain-selector",
         nextSelector: "#example-h-NextDomain-selector",
         label: {
-            position: "center",
-            width: 110
+            position: "top",
         },
         legendColors: {
             min: "#F87171",
@@ -105,15 +103,16 @@ async function createStrengthGraph() {
             empty: "white"
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 10,
+        legendCellSize: 15,
         legendHorizontalPosition: "right",
-        tooltip: false,
+        tooltip: true,
         weekStartOnMonday: false,
+        itemNamespace: "strength"
     })
 };
 
 async function createMindfulnessGraph() {
-    cal.init({
+    mindfulnessMap.init({
         data: await getMindfulness(),
         afterLoadData: parser,
         itemSelector: "#mindfulness-heatmap",
@@ -122,30 +121,28 @@ async function createMindfulnessGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 20,
+        cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
         subDomainTextFormat: "%d",
-        domainMargin: 20,
         animationDuration: 800,
-        domainDynamicDimension: false,
         previousSelector: "#example-h-PreviousDomain-selector",
         nextSelector: "#example-h-NextDomain-selector",
         label: {
-            position: "center",
-            width: 110
+            position: "top",
         },
         legendColors: {
             min: "#D8B4FE",
             max: "#581C87",
-            base: "#efefef"
+            empty: "white",
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 10,
+        legendCellSize: 15,
         legendHorizontalPosition: "right",
-        tooltip: false,
+        tooltip: true,
         weekStartOnMonday: false,
+        itemNamespace: "mindfulness",
     })
 };
 
