@@ -10,33 +10,43 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
   
+      
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
   
-        res.status(200).json(userData);
+        res.status(200).json({user: 
+          {
+            id: userData.id,
+            email: userData.email,
+          },
+          message: 'You are now logged in!' });
       });
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
 });
 
 router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.email } });
+      const reqEmail = req.body.email
+      const userData = await User.findOne({ where: { email: reqEmail } });
   
       if (!userData) {
         res
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
+          console.log("!userData")
         return;
       }
-  
-      const validPassword = await userData.checkPassword(req.body.password);
+      const reqPassword = req.body.password
+      const validPassword = await userData.checkPassword(reqPassword);
   
       if (!validPassword) {
         res
@@ -49,7 +59,12 @@ router.post('/login', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
         
-        res.json({ user: userData, message: 'You are now logged in!' });
+        res.json({user: 
+          {
+            id: userData.id,
+            email: userData.email,
+          },
+          message: 'You are now logged in!' });
       });
   
     } catch (err) {

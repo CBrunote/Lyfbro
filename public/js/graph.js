@@ -1,4 +1,10 @@
 var cal = new CalHeatMap();
+var userData = JSON.parse(localStorage.getItem("User"))
+var userID = userData.id
+
+console.log(userData)
+console.log(userID)
+
 
 var parser = function(data) {
     var stats = {};
@@ -9,7 +15,7 @@ var parser = function(data) {
 };
 
 async function getCardio(){
-    var requestUrl = 'http://localhost:3001/api/cardio/1'
+    var requestUrl = `http://localhost:3001/api/cardio/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -17,7 +23,7 @@ async function getCardio(){
 };
 
 async function getStrength(){
-    var requestUrl = 'http://localhost:3001/api/strength/1'
+    var requestUrl = `http://localhost:3001/api/strength/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -25,7 +31,7 @@ async function getStrength(){
 };
 
 async function getMindfulness(){
-    var requestUrl = 'http://localhost:3001/api/mindfulness/1'
+    var requestUrl = `http://localhost:3001/api/mindfulness/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -42,7 +48,7 @@ async function createCardioGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 40,
+        cellSize: 20,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
@@ -62,9 +68,9 @@ async function createCardioGraph() {
             empty: "white"
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendCellSize: 10,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };
@@ -79,7 +85,7 @@ async function createStrengthGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 40,
+        cellSize: 20,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
@@ -99,9 +105,9 @@ async function createStrengthGraph() {
             empty: "white"
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendCellSize: 10,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };
@@ -116,7 +122,7 @@ async function createMindfulnessGraph() {
         domain: "month",
         subDomain: "x_day",
         start: new Date(2022, 9, 13),
-        cellSize: 40,
+        cellSize: 20,
         cellRadius: 3,
         cellPadding: 5,
         range: 1,
@@ -136,9 +142,9 @@ async function createMindfulnessGraph() {
             base: "#efefef"
         },
         legend: [1, 10, 20, 30],
-        legendCellSize: 20,
-        legendHorizontalPosition: "left",
-        tooltip: true,
+        legendCellSize: 10,
+        legendHorizontalPosition: "right",
+        tooltip: false,
         weekStartOnMonday: false,
     })
 };

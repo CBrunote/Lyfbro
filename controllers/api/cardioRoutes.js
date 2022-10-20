@@ -38,8 +38,21 @@ router.get('/:user_id/:id', async (req, res) => {
   }
 });
 
+router.get('/:user_id', async (req, res) => {
+  try {
+    const cardioData = await Cardio.findAll(req.params.user_id);
+    if (!cardioData) {
+      res.status(404).json({ message: 'No Cardio Data found with this User ID!'});
+      return;
+    }
+    res.status(200).json(cardioData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-router.put('/:id/:user_id', async (req, res) => {
+
+router.put('/:id/:user_id', withAuth, async (req, res) => {
   try {
     const cardioData = await Cardio.update(req.body, {
       where: {
@@ -58,12 +71,12 @@ router.put('/:id/:user_id', async (req, res) => {
 });
 
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     const body = req.body
     try {
       const newCardio = await Cardio.create({
         ...body,
-        // user_id: 1,
+        user_id: req.session.user_id,
       });
   
       res.status(200).json(newCardio);
@@ -74,7 +87,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:user_id', async (req, res) => {
+router.delete('/:user_id', withAuth, async (req, res) => {
     try {
       const cardioData = await Cardio.destroy({
         where: {
