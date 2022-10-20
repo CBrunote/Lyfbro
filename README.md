@@ -57,18 +57,14 @@ Now, I totally Lyf, Bro!!
 - [D3 Calendar](https://observablehq.com/@d3/calendar)
 - [MySql2](https://www.mysql.com)
 
-## Installation
-
-      lorem ipsum
-
 ## Usage
 
 Click this [link](https://lyfbro99.herokuapp.com/login) to load the app.
 
 Sign up/sign in.\
 Click the "New Activity" button.\
-Enter your activity (Cardio, Strength, or Mindfulness)\
-Select the radio button reflecting your mood\
+Select your activity from the dropdown\
+Select your mood from the dropdown\
 Select the date from the calendar\
 Enter the time in minutes.
 
