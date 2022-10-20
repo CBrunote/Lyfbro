@@ -24,7 +24,7 @@
   - [Contributing](#contributing)
   - [Team Members](#team-members)
   - [Mockups](#mockups)
-  - [Demo Video](#demo-video)
+  - [Demo](#demo)
 
 ## User Story
 
@@ -101,11 +101,12 @@ Submit suggested improvements as a new GitHub branch to [Lyfbro](https://github.
 
 Dashboard ![image](https://user-images.githubusercontent.com/30813052/194967659-fc37fed3-2844-47f1-ad80-162a8fe45fb3.png)
 
-Log activity ![image](https://user-images.githubusercontent.com/30813052/194967797-f6ea8256-b31d-493b-a6d3-63be0ca31708.png)
+## Demo
 
-Log mood ![image](https://user-images.githubusercontent.com/30813052/194967817-0f6d08af-df3f-43cc-8536-be15f5f62d05.png)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/30813052/197032823-48b35800-8172-484b-8e49-9726aa2e8dd9.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/30813052/197032844-73cb3eaf-4a2c-4ee1-aaa7-6d3b8fe06377.gif)
 
-Sign Up ![image](https://user-images.githubusercontent.com/30813052/194967846-fa543dd0-03ce-4cbe-ae7b-48b8369e73da.png)
-Log In ![image](https://user-images.githubusercontent.com/30813052/194967872-ee5169a8-71a9-4aec-8521-4aa4465591b4.png)
 
-## Demo Video
+## Appendix:
+### Presentation 
+[View Presentation here](https://www.figma.com/proto/xwGUZMKyNiaGYT79A46QGA/lyfbro?page-id=43%3A105&node-id=43%3A106&viewport=257%2C666%2C0.21&scaling=contain&starting-point-node-id=43%3A106)
