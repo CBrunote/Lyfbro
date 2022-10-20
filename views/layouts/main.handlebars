@@ -45,9 +45,9 @@
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <!-- login or logout -->
               {{#if logged_in}}
-                <button class="no-button" id="logout">logout</button>
+                <button class="no-button dark:text-green-500" id="logout">logout</button>
               {{else}}
-                <a href="/login">login</a>
+                <a class="dark:text-green-500" href="/login">login</a>
               {{/if}}
             </div>
           </div>

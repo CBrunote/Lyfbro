@@ -1,3 +1,6 @@
+var userData = JSON.parse(localStorage.getItem("User"))
+var userID = userData.id
+
 const newActivity = async (event) => {
   console.log('Button Pressed') 
   event.preventDefault();
@@ -9,8 +12,7 @@ const newActivity = async (event) => {
     const time_spent = document.querySelector('.time-spent').value.trim();
     const categoryId = document.querySelector('#category').value.trim();
     const feeling_name = document.querySelector('#feeling-name').value.trim();
-    const userId = 1
-
+  
     const time_spentInt = parseInt(time_spent)
     const categoryIdInt = parseInt(categoryId)
     const feeling_nameInt = parseInt(feeling_name)
@@ -28,7 +30,7 @@ const newActivity = async (event) => {
     } 
     
     const categoryName = await category(categoryId)    
-    console.log(timeStamp, time_spentInt, categoryIdInt, feeling_nameInt, categoryName, userId)
+    console.log(timeStamp, time_spentInt, categoryIdInt, feeling_nameInt, categoryName, userID)
 
     if (timeStamp && time_spentInt && categoryIdInt && feeling_nameInt) {
       console.log('it worked')
@@ -39,7 +41,7 @@ const newActivity = async (event) => {
           "time_spent": time_spentInt,
           "category_id": categoryIdInt,
           "feeling_id": feeling_nameInt,
-          "user_id": userId,
+          "user_id": userID,
       }),
         headers: {
           'Content-Type': 'application/json',
