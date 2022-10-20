@@ -15,7 +15,7 @@ var parser = function(data) {
 };
 
 async function getCardio(){
-    var requestUrl = `http://localhost:3001/api/cardio/${userID}`
+    var requestUrl = `https://lyfbro99.herokuapp.com/api/cardio/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -23,7 +23,7 @@ async function getCardio(){
 };
 
 async function getStrength(){
-    var requestUrl = `http://localhost:3001/api/strength/${userID}`
+    var requestUrl = `https://lyfbro99.herokuapp.com/api/strength/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -31,7 +31,7 @@ async function getStrength(){
 };
 
 async function getMindfulness(){
-    var requestUrl = `http://localhost:3001/api/mindfulness/${userID}`
+    var requestUrl = `https://lyfbro99.herokuapp.com/api/mindfulness/${userID}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
