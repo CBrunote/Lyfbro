@@ -49,5 +49,48 @@ const signUp = async (event) => {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const signin = document.querySelector('#signIn')
+    const signup = document.querySelector('#signUp')
+
+    document.querySelector('#hideSignup').addEventListener('click', () => {
+        signup.classList.add('hidden')
+        signin.classList.remove('hidden')
+    });
+
+    document.querySelector('#hideSignin').addEventListener('click', () => {
+        signin.classList.add('hidden')
+        signup.classList.remove('hidden')
+    });
+
+});
+
+const demo = async (event) => {
+    event.preventDefault();
+
+    const email = 'test@test.com'
+    const password = 'pikachu1'
+
+    if (email && password) {
+        // see if this is the right route to send to the API endpoint
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({email, password}),
+            headers: {"Content-Type": 'application/json'},
+        });
+        console.log(response)
+
+        // if login is successful redirect them to the home page? can change if need to.
+        if (response.ok) {
+            const jsonData = await response.json()
+            localStorage.setItem("User", JSON.stringify(jsonData.user))
+            document.location.replace('/')
+        } else { 
+            alert(response.statusText);
+        }
+    }
+};
+
+document.querySelector('#demo').addEventListener('click', demo)
 document.querySelector('.login-form').addEventListener('click', login)
 document.querySelector('.signup-form').addEventListener('click', signUp)

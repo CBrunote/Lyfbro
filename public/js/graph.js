@@ -3,10 +3,15 @@ var strengthMap = new CalHeatMap();
 var mindfulnessMap = new CalHeatMap();
 
 var userData = JSON.parse(localStorage.getItem("User"))
-var userID = userData.id
-
-console.log(userData)
-console.log(userID)
+const userID = () => {
+    if (userData.id == null) {
+            document.location.replace('/login');
+            console.log('got here')
+            return
+    } else {
+        return userData.id
+    }
+};
 
 
 var parser = function(data) {
@@ -18,7 +23,8 @@ var parser = function(data) {
 };
 
 async function getCardio(){
-    var requestUrl = `/api/cardio/${userID}`
+    console.log(userID())
+    var requestUrl = `/api/cardio/${userID()}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -26,7 +32,7 @@ async function getCardio(){
 };
 
 async function getStrength(){
-    var requestUrl = `/api/strength/${userID}`
+    var requestUrl = `/api/strength/${userID()}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -34,7 +40,8 @@ async function getStrength(){
 };
 
 async function getMindfulness(){
-    var requestUrl = `/api/mindfulness/${userID}`
+    await userData
+    var requestUrl = `/api/mindfulness/${userID()}`
     return fetch(requestUrl)
         .then (function (response) {
             return response.json();
@@ -50,7 +57,6 @@ async function createCardioGraph() {
         datatype: "json",
         domain: "month",
         subDomain: "x_day",
-        start: new Date(2022, 9, 13),
         cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
@@ -85,7 +91,6 @@ async function createStrengthGraph() {
         datatype: "json",
         domain: "month",
         subDomain: "x_day",
-        start: new Date(2022, 9, 13),
         cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
@@ -120,7 +125,6 @@ async function createMindfulnessGraph() {
         datatype: "json",
         domain: "month",
         subDomain: "x_day",
-        start: new Date(2022, 9, 13),
         cellSize: 35,
         cellRadius: 3,
         cellPadding: 5,
@@ -146,6 +150,10 @@ async function createMindfulnessGraph() {
     })
 };
 
-createCardioGraph()
-createMindfulnessGraph()
-createStrengthGraph()
+if (userData == null){
+    location.replace('/login');
+} else {
+    createCardioGraph()
+    createMindfulnessGraph()
+    createStrengthGraph()
+}

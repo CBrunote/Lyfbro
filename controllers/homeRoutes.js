@@ -2,19 +2,19 @@ const router = require('express').Router();
 const { Strength, User, Mindfulness, Feeling, Cardio, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
-      res.render('homepage', { 
-        logged_in: req.session.logged_in 
+      res.render('homepage', {
+        logged_in: req.session.logged_in,
       });
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-  router.get('/activity', async (req, res) => {
+  router.get('/activity', withAuth, async (req, res) => {
     try {
-      res.render('activity', { 
+      res.render('activity', {
         logged_in: req.session.logged_in,
       });
     } catch (err) {
@@ -33,6 +33,7 @@ router.get('/', async (req, res) => {
       res.redirect('/');
       return;
     }
+    res.render('login');
   });
 
 
